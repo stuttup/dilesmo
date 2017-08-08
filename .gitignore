@@ -27,6 +27,9 @@ local.env
 *.mo
 *.pot
 
+# Pycharm
+.idea
+
 # Eclipse
 .project
 .pydevproject
