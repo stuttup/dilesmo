@@ -14,7 +14,7 @@ if "celery" in sys.argv[0]:
 # Django Debug Toolbar
 INSTALLED_APPS += (
     'debug_toolbar',
-
+    'wiki'
 )
 
 # Additional middleware introduced by debug toolbar
