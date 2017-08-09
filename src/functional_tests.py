@@ -16,7 +16,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_run_app(self):
         # A user hears about Dilesmo and goes to
         # checkout their home page
-        self.browser.get('http://localhost:8000')
+        self.browser.get('http://localhost:8000/query')
         self.assertIn('Dilesmo', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Dilesmo', header_text)
@@ -31,10 +31,11 @@ class NewVisitorTest(unittest.TestCase):
         inputbox.send_keys('football')
 
         # when he hits enter the page updates and he is shown images about football
-        main_image = self.browser.find_element_by_id('main_image')
-        images = self.mai,main_image.find_element_by_tag_name('<img>')
+        images_block = self.browser.find_element_by_id('images')
+        images = images_block.find_elements_by_tag_name('img')
         self.assertTrue(
-            any(image.title == 'footbal' for image in images)
+            any(image.get_attribute('title') == 'footbal' for image in images),
+            "New image did not appear in images list"
         )
 
         # There is still a text box inviting him to make another research
