@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 #from dilesmo.views import HomePage
 
 # Create your views here.
@@ -6,7 +7,9 @@ from django.shortcuts import render
  #   return HomePage.as_view()
 
 def query_page(request):
-    return render(request, 'wiki/query.html')
+    return render(request, 'wiki/query.html', {
+        'new_image': request.POST.get("query", ''),
+    })
 
 
 def results_page(request):
