@@ -177,3 +177,8 @@ body>.navbar-transparent {
 .form-box form .form-control:focus {
   z-index: 2;
 }
+
+/* Added on 20170818 */
+#searchbox {
+    color: black
+}

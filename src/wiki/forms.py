@@ -1,4 +1,9 @@
 from django import forms
 
-class QueryForm(forms.Form):
-    query = forms.CharField(max_length=255)
+from .models import Queries
+
+class QueriesForm(forms.ModelForm):
+
+    class Meta:
+        model = Queries
+        fields = ('query',)
