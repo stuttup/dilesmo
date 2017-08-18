@@ -19,14 +19,14 @@ def query_page(request):
             q=question,
             cx='006354159737151125162:amidb2ooswc',
             searchType='image',
-            num=3,
+            num=5,
             imgType='clipart',
             fileType='png',
             safe='off'
         ).execute()
 
         if not 'items' in res:
-            images = [{'title': '', 'src': ''}, {'title': '', 'src': ''}, {'title': '', 'src': ''}]
+            images = [{'title': '', 'src': ''} for i in range(5)]
         else:
             images = []
             for item in res['items']:

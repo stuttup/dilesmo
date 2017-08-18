@@ -68,7 +68,7 @@ body>.navbar-transparent {
 /* Home page styling */
 .corporate-jumbo {
     background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
-      url("/static/site/img/banner.jpg");
+      url("/static/site/img/learning2.jpg");
     background-repeat: no-repeat;
     background-position: 80% center;
     background-attachment: fixed;
@@ -180,5 +180,31 @@ body>.navbar-transparent {
 
 /* Added on 20170818 */
 #searchbox {
-    color: black
+    color: black;
+    width: 200%;
+}
+
+#searchblock, #searchform {
+    align-content: center;
+    width: 50%;
+    margin: auto;
+}
+
+.carousel-inner > .item {
+  height: 100vh;
+}
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-height: 800px;
+  width: auto;
+}
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
 }
