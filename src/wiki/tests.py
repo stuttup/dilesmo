@@ -13,10 +13,21 @@ class QueryPageTest(TestCase):
         self.assertTemplateUsed(response, 'wiki/query.html')
 
     def test_can_save_a_post_request(self):
-        response = self.client.get('/query/', data={'query': 'football'})
-        #print(response.content.decode())
-        self.assertIn('football', response.content.decode())
-        self.assertTemplateUsed(response, 'wiki/query.html')
+        self.client.post('/query/', data={'query': 'football'})
+
+        self.assertEqual(Item.objects.count(), 1)
+        new_item = Item.objects.first()
+        self.assertEqual(new_item.title, 'football')
+
+
+    def test_redirects_after_POST(self):
+        response = self.client.post('/query/', data={'query': 'football'})
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response['location'], '/query/')
+
+    def test_only_saves_items_when_necessary(self):
+        self.client.get('/query/')
+        self.assertEqual(Item.objects.count(), 0)
 
 
 class ItemmodelTest(TestCase):

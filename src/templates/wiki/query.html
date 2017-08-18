@@ -23,8 +23,19 @@
       <div class="row">
         <div class="col-md-8 col-sm-8">
           <h1>{% include "_brandname.html" %}</h1>
-          <input id="query" placeholder="Que recherchez vous ? Dites-moi tout"/>
-	  <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up for Free!</a>
+           <form class="form-inline" id="searchform" action="{% url 'query:results' %}">
+              <div class="form-group">
+
+                <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
+                {% csrf_token %}
+              </div>
+              <div class="input-group-btn">
+              <button type="submit" class="searchbutton">Chercher</button>
+              <span class="glyphicon glyphicon-search"></span>
+              </div>
+           </form>
+
+
         </div>
         <div class="col-md-4 col-sm-4">
 
@@ -37,7 +48,7 @@
 {% block container %}
 
 <div class="container" id="images">
+    <img src="" title="{{ new_image }}">
     <img src="" title="football">
-    <img src="">
 </div>
 {% endblock container %}

@@ -29,13 +29,16 @@ class NewVisitorTest(unittest.TestCase):
 
         # He types football in the text box
         inputbox.send_keys('football')
+        time.sleep(1)
 
         # when he hits enter the page updates and he is shown images about football
         images_block = self.browser.find_element_by_id('images')
         images = images_block.find_elements_by_tag_name('img')
+
         self.assertTrue(
-            any(image.get_attribute('title') == 'footbal' for image in images),
-            "New image did not appear in images list"
+            any(image.get_attribute('title') == 'football' for image in images),
+            f"New image with title 'football' did not appear. \
+            The titles were:\n{image.get_attribute('title') for image in images}"
         )
 
         # There is still a text box inviting him to make another research
