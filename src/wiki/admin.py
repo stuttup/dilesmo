@@ -6,5 +6,6 @@ from .models import Queries
 class QueriesAdmin(admin.ModelAdmin):
     fields = ['query']
     list_display = ('query',)
+    list_filter = ['query']
 
 admin.site.register(Queries, QueriesAdmin)

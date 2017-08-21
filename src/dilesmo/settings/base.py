@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = ['192.168.1.12', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['localhost', '192.168.1.176', '192.168.1.159', '127.0.0.1']
 
 # Crispy Form Theme - Bootstrap 3
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
