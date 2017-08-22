@@ -62,4 +62,4 @@ Desktop.ini
 ./site/
 
 # Production specific elements
-static/
+#static/
