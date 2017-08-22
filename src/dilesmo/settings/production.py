@@ -7,8 +7,17 @@ import logging.config
 DEBUG = False
 TEMPLATE_DEBUG = False
 
+INSTALLED_APPS += (
+        'debug_toolbar',
+        'wiki'
+    )
+
+MIDDLEWARE_CLASSES += (
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    )
+
 # Must mention ALLOWED_HOSTS in production!
-# ALLOWED_HOSTS = ["dilesmo.com"]
+ALLOWED_HOSTS = ["dilesmo.com", '*']
 
 # Cache the templates in memory for speed-up
 loaders = [

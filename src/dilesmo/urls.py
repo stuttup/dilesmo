@@ -1,4 +1,5 @@
 from django.conf.urls import include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -19,6 +20,8 @@ urlpatterns = [
 
 # User-uploaded files like profile pics need to be served in development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Added for test
+urlpatterns += staticfiles_urlpatterns()
 
 # Include django debug toolbar if DEBUG is on
 if settings.DEBUG:

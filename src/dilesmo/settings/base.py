@@ -12,7 +12,7 @@ from os.path import dirname, join, exists
 
 # Build paths inside the project like this: join(BASE_DIR, "directory")
 BASE_DIR = dirname(dirname(dirname(__file__)))
-STATICFILES_DIRS = [join(BASE_DIR, 'static')]
+#STATICFILES_DIRS = [join(BASE_DIR, 'static')]
 MEDIA_ROOT = join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 
@@ -77,7 +77,6 @@ INSTALLED_APPS = (
 
     'profiles',
     'accounts',
-
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,9 +105,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
@@ -120,8 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+#STATIC_ROOT = join(BASE_DIR, 'static/')
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.176', '192.168.1.159', '127.0.0.1']
 
 # Crispy Form Theme - Bootstrap 3
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

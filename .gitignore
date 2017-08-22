@@ -60,3 +60,6 @@ Desktop.ini
 
 # Project settings
 ./site/
+
+# Production specific elements
+static/
